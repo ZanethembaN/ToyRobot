@@ -14,7 +14,7 @@ Clone the repository to your local machine:
 
 bash
 Copy code
-git clone [https://github.com/yourusername/toy-robot-simulator.git](https://github.com/ZanethembaN/ToyRobot.git)
+git clone https://github.com/ZanethembaN/ToyRobot.git
 Navigate to the project directory:
 
 bash
