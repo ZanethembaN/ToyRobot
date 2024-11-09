@@ -14,19 +14,18 @@ Clone the repository to your local machine:
 
 bash
 Copy code
-git clone https://github.com/yourusername/toy-robot-simulator.git
+git clone https://github.com/ZanethembaN/ToyRobot.git
 Navigate to the project directory:
 
 bash
 Copy code
-cd toy-robot-simulator
+cd ToyRobot
 Run the toy_robot.py script using Python:
 
 bash
 Copy code
-python toy_robot.py
-Usage
-Example:
+python3 ToyRobot.py
+Usage Example:
 python
 Copy code
 # Create a ToyRobot object in a 5x5 grid, starting at (0, 0)
@@ -58,3 +57,28 @@ Place Obstacle: place_obstacle(x, y) – Place an obstacle at the specified (x, 
 
 Move: move(direction, steps) – A generic command that allows you to move in a given direction (either 'forward' or 'backward') for a specified number of steps. This can be used in place of the move_forward() and move_backward() methods.
 
+Example of Movement and Obstacle Handling:
+python
+Copy code
+# Initialize the robot in a 5x5 grid
+robot = ToyRobot(grid_size=(5, 5), start_position=(0, 0))
+
+# Place obstacles on the grid
+robot.place_obstacle(2, 0)  # Obstacle at (2, 0)
+robot.place_obstacle(3, 1)  # Obstacle at (3, 1)
+
+# Issue commands to the robot
+robot.status()  # Output: "Robot is at (0, 0), facing NORTH."
+robot.move_forward(3)  # Will stop at (2, 0) and print a message
+robot.turn_right()  # Turn right, now facing EAST
+robot.move_backward(2)  # Will stop at (3, 1) and print a message
+robot.move_forward(2)  # Moves 2 steps without obstacles
+robot.status()  # Output: "Robot is at (2, 2), facing EAST."
+Example Commands and Their Effects:
+python
+Copy code
+robot.move('forward', 3)  # Moves the robot forward 3 steps (halts at obstacle)
+robot.move('backward', 2)  # Moves the robot backward 2 steps (halts at obstacle)
+robot.turn_left()  # Turns the robot 90 degrees left
+robot.turn_right()  # Turns the robot 90 degrees right
+robot.status()  # Prints the robot's current position and direction
