@@ -1,48 +1,49 @@
-###Toy Robot Simulator
+### Toy Robot Simulator
 This project simulates the movement of a toy robot in a 2D grid environment. The robot can respond to user commands such as forward, backward, turn left, turn right, and status, while handling obstacles and checking if it can move to the requested position. If the robot encounters an obstacle, it will stop and print a message indicating the obstacle's position.
 
-Features
+### Features
 Move the robot forward and backward in four directions: NORTH, EAST, SOUTH, and WEST.
 Turn the robot left or right by 90 degrees.
 Place obstacles on the grid that the robot cannot move through.
 The robot will stop and print a message if it encounters an obstacle or tries to move out of bounds.
 Supports additional robot commands like status to get the robot's current position and facing direction.
 Requirements
-Python 3.x
-Installation
-Clone the repository to your local machine:
+Python 3.x Installation
 
-bash
-Copy code
+. **Clone the Repository**:
+
+   ```bash
 git clone https://github.com/ZanethembaN/ToyRobot.git
-Navigate to the project directory:
-
-bash
-Copy code
 cd ToyRobot
-Run the toy_robot.py script using Python:
 
-bash
-Copy code
+
+
+
+**Run the toy_robot.py script using Python**:
+
+
+```bash
 python3 ToyRobot.py
-Usage Example:
-python
-Copy code
-# Create a ToyRobot object in a 5x5 grid, starting at (0, 0)
+
+
+### Usage Example:
+
+Create a ToyRobot object in a 5x5 grid, starting at (0, 0)
 robot = ToyRobot(grid_size=(5, 5), start_position=(0, 0))
 
-# Place obstacles at specific positions
+**Place obstacles at specific positions**
 robot.place_obstacle(2, 0)  # Obstacle at (2, 0)
 robot.place_obstacle(3, 1)  # Obstacle at (3, 1)
 
-# Move the robot and observe behavior
-robot.status()  # Print the current state of the robot
-robot.move_forward(3)  # Try moving forward 3 steps (will stop at obstacle at (2, 0))
-robot.turn_right()  # Turn the robot right (now facing EAST)
-robot.move_backward(2)  # Try moving backward 2 steps (will stop at obstacle at (3, 1))
-robot.move_forward(2)  # Move freely without hitting an obstacle
-robot.status()  # Final robot position
-Available Commands:
+**Move the robot and observe behavior**
+robot.status() - Print the current state of the robot
+robot.move_forward(3) - Try moving forward 3 steps (will stop at obstacle at (2, 0))
+robot.turn_right() - Turn the robot right (now facing EAST)
+robot.move_backward(2) - Try moving backward 2 steps (will stop at obstacle at (3, 1))
+robot.move_forward(2) - Move freely without hitting an obstacle
+robot.status() - Final robot position
+
+### Available Commands:
 Move Forward: move_forward(steps) – Move the robot forward by a specified number of steps. If there is an obstacle, the robot will stop and print an error message.
 
 Move Backward: move_backward(steps) – Move the robot backward by a specified number of steps. Similar to moving forward, it will stop if an obstacle is encountered.
@@ -57,28 +58,28 @@ Place Obstacle: place_obstacle(x, y) – Place an obstacle at the specified (x, 
 
 Move: move(direction, steps) – A generic command that allows you to move in a given direction (either 'forward' or 'backward') for a specified number of steps. This can be used in place of the move_forward() and move_backward() methods.
 
-Example of Movement and Obstacle Handling:
-python
-Copy code
-# Initialize the robot in a 5x5 grid
+**Example of Movement and Obstacle Handling**:
+
+**Initialize the robot in a 5x5 grid**
 robot = ToyRobot(grid_size=(5, 5), start_position=(0, 0))
 
-# Place obstacles on the grid
+**Place obstacles on the grid**
 robot.place_obstacle(2, 0)  # Obstacle at (2, 0)
 robot.place_obstacle(3, 1)  # Obstacle at (3, 1)
 
-# Issue commands to the robot
-robot.status()  # Output: "Robot is at (0, 0), facing NORTH."
-robot.move_forward(3)  # Will stop at (2, 0) and print a message
-robot.turn_right()  # Turn right, now facing EAST
-robot.move_backward(2)  # Will stop at (3, 1) and print a message
-robot.move_forward(2)  # Moves 2 steps without obstacles
-robot.status()  # Output: "Robot is at (2, 2), facing EAST."
-Example Commands and Their Effects:
-python
-Copy code
-robot.move('forward', 3)  # Moves the robot forward 3 steps (halts at obstacle)
-robot.move('backward', 2)  # Moves the robot backward 2 steps (halts at obstacle)
-robot.turn_left()  # Turns the robot 90 degrees left
-robot.turn_right()  # Turns the robot 90 degrees right
-robot.status()  # Prints the robot's current position and direction
+**Issue commands to the robot**
+robot.status()  - Output: "Robot is at (0, 0), facing NORTH."
+robot.move_forward(3)  - Will stop at (2, 0) and print a message
+robot.turn_right()  - Turn right, now facing EAST
+robot.move_backward(2)  - Will stop at (3, 1) and print a message
+robot.move_forward(2)  - Moves 2 steps without obstacles
+robot.status()  - Output: "Robot is at (2, 2), facing EAST."
+
+
+### Example Commands and Their Effects:
+
+robot.move('forward', 3)  - Moves the robot forward 3 steps (halts at obstacle)
+robot.move('backward', 2)  - Moves the robot backward 2 steps (halts at obstacle)
+robot.turn_left()  - Turns the robot 90 degrees left
+robot.turn_right()  - Turns the robot 90 degrees right
+robot.status()  - Prints the robot's current position and direction
