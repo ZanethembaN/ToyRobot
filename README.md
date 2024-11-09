@@ -13,13 +13,13 @@ Python 3.x Installation
 
 Clone the Repository:
 
-```bash
+```bash```
 git clone https://github.com/ZanethembaN/ToyRobot.git
 cd ToyRobot
 
 Run the toy_robot.py script using Python:
 
-```bash
+```bash```
 python3 ToyRobot.py
 
 
